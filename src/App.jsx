@@ -1,0 +1,89 @@
+import { Route, Routes } from "react-router-dom";
+import { FiSettings } from 'react-icons/fi';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import Ecommerce from "./pages/Ecommerce";
+import Orders from "./pages/Orders";
+import Employees from "./pages/Employees";
+import Customers from "./pages/Customers";
+import Kanban from "./pages/Kanban";
+import Editor from "./pages/Editor";
+import Calendar from "./pages/Calendar";
+import ColorPicker from "./pages/ColorPicker";
+import Line from "./pages/Charts/Line";
+import Bar from "./pages/Charts/Bar";
+import Area from "./pages/Charts/Area";
+import Pie from "./components/Charts/Pie";
+import Financial from "./pages/Charts/Financial";
+import ColorMapping from "./pages/Charts/ColorMapping";
+import Pyramid from "./pages/Charts/Pyramid";
+import Stacked from "./components/Charts/Stacked";
+
+function App() {
+  const activeMenu = true;
+
+  return (
+    <div className=''>
+      <TooltipComponent
+        content="Settings"
+        position="Top"
+      >
+        <button
+          type="button"
+          style={{ background: 'blue', borderRadius: '50%' }}
+          className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+        >
+          <FiSettings />
+        </button>
+
+      </TooltipComponent>
+      {
+          activeMenu? (
+            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">sidebar</div>
+          ) : (
+            <div className="w-0 dark:bg-secondary-dark-bg">sidebar w-0</div>
+          )
+      }
+      <div 
+      className={
+        activeMenu
+          ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
+          : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
+      }
+      >
+        <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+          Navbar
+        </div>
+        <div>
+            <Routes>
+              {/* dashboard  */}
+              <Route path="/" element={(<Ecommerce />)} />
+              <Route path="/ecommerce" element={(<Ecommerce />)} />
+
+              {/* pages  */}
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/employees" element={<Employees />} />
+              <Route path="/customers" element={<Customers />} />
+
+              {/* apps  */}
+              <Route path="/kanban" element={<Kanban />} />
+              <Route path="/editor" element={<Editor />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/color-picker" element={<ColorPicker />} />
+
+              {/* charts  */}
+              <Route path="/line" element={<Line />} />
+              <Route path="/area" element={<Area />} />
+              <Route path="/bar" element={<Bar />} />
+              <Route path="/pie" element={<Pie />} />
+              <Route path="/financial" element={<Financial />} />
+              <Route path="/color-mapping" element={<ColorMapping />} />
+              <Route path="/pyramid" element={<Pyramid />} />
+              <Route path="/stacked" element={<Stacked />} />
+            </Routes>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
