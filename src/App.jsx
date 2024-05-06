@@ -2,6 +2,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
 import { Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar.jsx';
+import { Navbar } from './components/index.jsx';
 import { useStateContext } from './contexts/ContextProvider.jsx';
 import {
 	Area,
@@ -52,7 +53,7 @@ function App() {
 				}
 			>
 				<div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full '>
-					Navbar
+					<Navbar/>
 				</div>
 				<div>
 					<Routes>
