@@ -1,16 +1,41 @@
-import Board from '@asseinfo/react-kanban';
-import '@asseinfo/react-kanban/dist/styles.css';
+// import Board from '@asseinfo/react-kanban';
+// import '@asseinfo/react-kanban/dist/styles.css';
+// import { Header } from '../components';
+// import { board } from '../data/dummy';
+
+
+// const Kanban = () => {
+//   return (
+//     <div>
+//       <Header category="App" title="Kanban" />
+//       <Board initialBoard={board} />
+//     </div>
+//   )
+// }
+
+// export default Kanban
+
+import { ColumnDirective, ColumnsDirective, KanbanComponent } from '@syncfusion/ej2-react-kanban';
+import React from 'react';
+
 import { Header } from '../components';
-import { board } from '../data/dummy';
+import { kanbanData, kanbanGrid } from '../data/dummy';
 
+const Kanban = () => (
+  <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+    <Header category="App" title="Kanban" />
+    <KanbanComponent
+      id="kanban"
+      keyField="Status"
+      dataSource={kanbanData}
+      cardSettings={{ contentField: 'Summary', headerField: 'Id' }}
+    >
+      <ColumnsDirective>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        {kanbanGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
+      </ColumnsDirective>
+    </KanbanComponent>
+  </div>
+);
 
-const Kanban = () => {
-  return (
-    <div>
-      <Header category="App" title="Kanban" />
-      <Board initialBoard={board} />
-    </div>
-  )
-}
-
-export default Kanban
+export default Kanban;
