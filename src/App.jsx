@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { FiSettings } from 'react-icons/fi';
 import { Route, Routes } from 'react-router-dom';
 import { Footer, Navbar, Sidebar, ThemeSettings } from './components';
-import { Area, Bar, ColorMapping, Customers, Ecommerce, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Scheduler, Stacked } from './pages';
+import { Area, Bar, ColorMapping, ColorPicker, Customers, Ecommerce, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Scheduler, Stacked } from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';
 
@@ -74,7 +74,7 @@ const App = () => {
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
                 <Route path="/calendar" element={<Scheduler />} />
-
+                <Route path="/color-picker" element={<ColorPicker/>}/>
                 {/* charts  */}
                 <Route path="/line" element={<Line />} />
                 <Route path="/area" element={<Area />} />
