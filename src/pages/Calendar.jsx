@@ -1,7 +1,11 @@
-function Calendar() {
+function Scheduler(props) {
   return (
-    <div>Calendar</div>
+  <div>
+    Scheduler
+  </div>
   )
+
 }
 
-export default Calendar
+
+export default Scheduler

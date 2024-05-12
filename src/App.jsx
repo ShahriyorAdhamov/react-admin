@@ -1,9 +1,9 @@
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import React, { useEffect } from 'react';
 import { FiSettings } from 'react-icons/fi';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Footer, Navbar, Sidebar, ThemeSettings } from './components';
-import { Area, Bar, Calendar, ColorMapping, Customers, Ecommerce, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Stacked } from './pages';
+import { Area, Bar, ColorMapping, Customers, Ecommerce, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Scheduler, Stacked } from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';
 
@@ -73,7 +73,7 @@ const App = () => {
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
-                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/calendar" element={<Scheduler />} />
 
                 {/* charts  */}
                 <Route path="/line" element={<Line />} />

@@ -1,6 +1,15 @@
-function Kanban() {
+import Board from '@asseinfo/react-kanban';
+import '@asseinfo/react-kanban/dist/styles.css';
+import { Header } from '../components';
+import { board } from '../data/dummy';
+
+
+const Kanban = () => {
   return (
-    <div>Kanban</div>
+    <div>
+      <Header category="App" title="Kanban" />
+      <Board initialBoard={board} />
+    </div>
   )
 }
 
