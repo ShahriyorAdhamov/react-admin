@@ -15,7 +15,9 @@ const Employees = () => {
       <GridComponent
         dataSource={employeesData}
         width="auto"
+        allowPaging
         allowSorting
+        pageSettings={{ pageCount: 5 }}
         editSettings={editing}
         toolbar={toolbarOptions}
       >
@@ -23,11 +25,10 @@ const Employees = () => {
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           {employeesGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
         </ColumnsDirective>
-        <Inject services={[Search]} />
+        <Inject services={[Search, Page]} />
 
       </GridComponent>
     </div>
   );
 };
 export default Employees;
-

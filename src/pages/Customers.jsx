@@ -15,6 +15,8 @@ const Customers = () => {
       <GridComponent
         dataSource={customersData}
         enableHover={false}
+        allowPaging
+        pageSettings={{ pageCount: 5 }}
         selectionSettings={selectionsettings}
         toolbar={toolbarOptions}
         editSettings={editing}
@@ -24,7 +26,7 @@ const Customers = () => {
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           {customersGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
         </ColumnsDirective>
-        <Inject services={[ Selection, Toolbar, Edit, Sort, Filter]} />
+        <Inject services={[Page, Selection, Toolbar, Edit, Sort, Filter]} />
       </GridComponent>
     </div>
   );
